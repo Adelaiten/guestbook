@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdth=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <link rel="stylesheet" href="../html/css/index.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <p>Sign the Guestbook!</p>
+        </header>
+        <div id="content">
+            {% for comment in commentsList %}
+               <div><p>Name: {{ comment.getName() }} </p><p>Surname: {{ comment.getSurname() }} </p><p>Description: {{ comment.getDescription() }} </p><p>Date: {{ comment.getDate() }} </p><p>Id: {{ comment.getId() }} </p></div>
+            {% endfor %}
+        <form method="POST">
+            <p>Name: </p>
+            <input type="text" name="name">
+            <p>Description: </p>
+            <input type="text" name="description">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
