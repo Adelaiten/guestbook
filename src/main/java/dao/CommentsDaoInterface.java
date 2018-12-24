@@ -1,5 +1,7 @@
 package dao;
 
+import models.Comment;
+
 import java.sql.SQLException;
 import java.util.List;
 

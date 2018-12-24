@@ -1,8 +1,8 @@
 package dao;
 
-import com.sun.deploy.panel.DeleteFilesDialog;
 
-import javax.xml.stream.events.Comment;
+import models.Comment;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
