@@ -13,7 +13,7 @@
         </header>
         <div id="content">
             {% for comment in commentsList %}
-               <div><p>Name: {{ comment.getName() }} </p><p>Surname: {{ comment.getSurname() }} </p><p>Description: {{ comment.getDescription() }} </p><p>Date: {{ comment.getDate() }} </p><p>Id: {{ comment.getId() }} </p></div>
+               <div><p>Nickname: {{ comment.getNickname() }} <p>Description: {{ comment.getDescription() }} </p><p>Date: {{ comment.getDate() }} </p><p>Id: {{ comment.getId() }} </p></div>
             {% endfor %}
         <form method="POST">
             <p>Name: </p>

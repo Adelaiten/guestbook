@@ -1,7 +1,11 @@
 package dao;
 
+import javax.xml.stream.events.Comment;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommentsDao implements CommentsDaoInterface {
@@ -12,7 +16,19 @@ public class CommentsDao implements CommentsDaoInterface {
     }
     @Override
     public List<Comment> readComments() throws SQLException {
-        return null;
+        List<Comment> commentsList = new ArrayList<Comment>();
+        String query = "SELECT * FROM info ORDER BY id;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while(resultSet.next()){
+            Comment comment = new Comment();
+            comment.setId(resultSet.getInt("id"));
+            comment.setNickname(resultSet.getString("user_nick_name"));
+            comment.setDescription(resultSet.getString("user_description"));
+            comment.setDate(resultSet.getString("post_day"));
+            commentsList.add(comment);
+        }
+        return commentsList;
     }
 
     @Override
