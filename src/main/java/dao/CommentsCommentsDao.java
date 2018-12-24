@@ -42,12 +42,16 @@ public class CommentsDao implements CommentsDaoInterface {
     }
 
     @Override
-    public void updateComment(String id, String description) throws SQLException{
-
+    public void updateComment(int id, String description) throws SQLException{
+        String query = "UPDATE info SET description = ? WHERE id = ?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, description);
+        preparedStatement.setInt(2, id);
+        preparedStatement.executeUpdate();
     }
 
     @Override
-    public void deleteComment(String id) throws SQLException{
+    public void deleteComment(int id) throws SQLException{
 
     }
 }
