@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    
+    background-color: #e0dada;
 }
 #wrapper {
     width: 100%;
@@ -27,4 +27,36 @@ header p {
     margin: 0;
     padding: 0;
 
+}
+
+#content {
+
+    width: 80vw;
+    background-color: #ffffff;
+    -webkit-box-shadow: 3px 3px 1px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 1px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 1px 0px rgba(0,0,0,0.75);
+    transform: translate(13%,-12%);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.user-entry:nth-child(2){
+    padding: 5px 2px 5px 2px;
+    background-color: #eee8e8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+form p {
+    align-self: center;
+}
+form input {
+    align-self: center;
+    width: 30vw;
+    height: 10vh;
 }
