@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+#wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 45vh;
+    background-color: #4e4d4d;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+header p {
+    align-self: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px rgba(0,0,0,0.43);
+    margin: 0;
+    padding: 0;
+
+}
