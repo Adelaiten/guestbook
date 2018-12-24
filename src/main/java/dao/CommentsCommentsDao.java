@@ -1,5 +1,7 @@
 package dao;
 
+import com.sun.deploy.panel.DeleteFilesDialog;
+
 import javax.xml.stream.events.Comment;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -52,6 +54,9 @@ public class CommentsDao implements CommentsDaoInterface {
 
     @Override
     public void deleteComment(int id) throws SQLException{
-
+        String query = "DELETE * FROM info WHERE id = ?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, id);
+        preparedStatement.executeUpdate();
     }
 }
