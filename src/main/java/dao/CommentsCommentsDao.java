@@ -33,7 +33,12 @@ public class CommentsDao implements CommentsDaoInterface {
 
     @Override
     public void addComment(String userNickName, String userDescription, String postDay) throws SQLException{
-
+        String query = "INSERT INTO info (user_nick_name, user_description, post_day) VALUES(?,?,?);";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, userNickName);
+        preparedStatement.setString(2, userDescription);
+        preparedStatement.setString(3, postDay);
+        preparedStatement.executeUpdate();
     }
 
     @Override
